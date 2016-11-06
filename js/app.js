@@ -4,8 +4,8 @@ var showImage = function(e)
 	var image = imageArray[0];
 	image.className = "showableImage";
 
-    var xPosition = e.clientX;
-    var yPosition = e.clientY;
+	var xPosition = e.clientX;
+	var yPosition = e.clientY;
 	console.log(xPosition + ", " + yPosition);
 	
 	var centerX = xPosition - (Number(image.clientWidth)/2);
