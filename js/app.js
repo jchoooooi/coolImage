@@ -15,24 +15,22 @@ function addImageToDoc (src, width, height, alt) {
 var showImage = function(e)
 {
 	var currentImagePath = imagePaths[currentImageIndex];
-	var img =addImageToDoc(currentImagePath, "150", "250", "hey");
+	var image =addImageToDoc(currentImagePath, "150", "250", "hey");
 	
 	var xPosition = e.clientX;
 	var yPosition = e.clientY;
 	console.log(xPosition + ", " + yPosition);
 	
-	var centerX = xPosition - (Number(img.width)/2);
-	var centerY = yPosition - (Number(img.height)/2);
+	var centerX = xPosition - (Number(image.width)/2);
+	var centerY = yPosition - (Number(image.height)/2);
 	console.log(centerX + ", " + centerY);
-	img.style.left = centerX +"px";
-	img.style.top = centerY +"px";
-	img.style.position = "absolute";
+	image.style.left = centerX +"px";
+	image.style.top = centerY +"px";
+	image.style.position = "absolute";
 
-	document.body.appendChild(img);
+	document.body.appendChild(image);
 	currentImageIndex ++;
-	if (currentImageIndex >= imagePaths.length){
-		currentImageIndex = 0;
-	}
+	currentImageIndex = currentImageIndex % imagePaths.length;
 }
 
 function shuffle(array) {
